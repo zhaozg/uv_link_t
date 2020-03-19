@@ -1,3 +1,12 @@
+all:	build
+	ninja -C build
+
+build:
+	meson build
+
+clean:
+	rm -rf build
+
 test: dist
 	./out/Release/uv_link_t-test
 

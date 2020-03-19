@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "src/common.h"
+#include "common.h"
 
 static const size_t kErrorPrefixShift = 16;
 static const int kErrorValueMask = (1 << 16) - 1;

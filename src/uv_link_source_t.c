@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "src/common.h"
+#include "common.h"
 
 typedef struct uv_link_source_write_s uv_link_source_write_t;
 typedef struct uv_link_source_shutdown_s uv_link_source_shutdown_t;

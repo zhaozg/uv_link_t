@@ -1,6 +1,4 @@
-if meson.project_name()==''
-  project('uv_link', ['c'], version: '1.0.5')
-endif
+project('uv_link', ['c'], version: '1.0.5')
 
 c = meson.get_compiler('c')
 uv_dep = dependency('libuv', version: '>=1.0.0', required: false)
@@ -24,22 +22,8 @@ e = executable('uv_link_example',
     'example/src/main.c',
     'example/src/middle.c'
   ],
-  link_with: [uv_link_lib, minitest_lib],
+  link_with: [uv_link_lib ],
   dependencies : [uv_dep],
   include_directories: [uv_link_dir])
 
-t = executable('uv_link_test',
-  sources: [
-    'test/src/main.c',
-    'test/src/test-uv-link-source-t.c',
-    'test/src/test-uv-link-observer-t.c',
-    'test/src/test-defaults.c',
-    'test/src/test-close.c',
-    'test/src/test-strerror.c',
-  ],
-  link_with: [uv_link_lib, minitest_lib],
-  dependencies : [uv_dep],
-  include_directories: [uv_link_dir, minitest_dir])
-
-test('uv_http_t test', t)
 
